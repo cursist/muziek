@@ -12,9 +12,8 @@ import static be.vdab.muziek.utility.Convertor.printDoubleAlsMinutenEnSeconden;
 public class Track {
     private String naam;
     private double tijd;
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "albumId")
-    private Album album;
+
+//    private long albumId;
 
     public Track(String naam, double tijd, Album album) {
         this.naam = naam;
@@ -25,7 +24,7 @@ public class Track {
 
     private void setAlbum(Album album) {
         album.addTrack(this);
-        this.album = album;
+//        this.albumId = album.getId();
     }
 
     public String getNaam() {

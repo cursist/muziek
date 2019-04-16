@@ -3,7 +3,6 @@ package be.vdab.muziek.domain;
 import javax.persistence.*;
 import java.util.Collections;
 import java.util.HashSet;
-import java.util.Objects;
 import java.util.Set;
 
 import static be.vdab.muziek.utility.Convertor.printDoubleAlsMinutenEnSeconden;
@@ -23,7 +22,7 @@ public class Album {
 
     @ElementCollection
     @CollectionTable(name = "tracks", joinColumns = @JoinColumn(name = "albumId"))
-    @OneToMany(mappedBy = "tracks")
+//    @OneToMany(mappedBy = "tracks")
     private Set<Track> tracks = new HashSet<>();
 
     public Album(String naam, final Artiest artiest) {
